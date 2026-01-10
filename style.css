@@ -11,7 +11,7 @@
 
 /* ---------- Title Card ---------- */
 .card {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 22px;
@@ -42,15 +42,31 @@ h2, h3 {
 
 /* ---------- Metric / Info Boxes ---------- */
 .stMetric {
-    background: rgba(255,255,255,0.85);
-    padding: 16px;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.92) !important;
+    padding: 18px !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* ---------- Metric Label (Accuracy, etc) ---------- */
+div[data-testid="stMetricLabel"] {
+    color: #000000 !important;   /* Pure black headings */
+    font-weight: 600 !important; /* Clean, not too bold */
+    font-size: 16px !important;
+    letter-spacing: 0.3px;
+}
+
+
+/* ---------- Metric Value (Numbers) ---------- */
+div[data-testid="stMetricValue"] {
+    color: #020617 !important;        /* Almost black */
+    font-weight: 600 !important;      /* Semi-bold, not heavy */
+    font-size: 30px !important;
 }
 
 /* ---------- Text Output Box ---------- */
 .stText, .stCodeBlock, pre {
-    background: rgba(255,255,255,0.85) !important;
+    background: rgba(255,255,255,0.88) !important;
     border-radius: 12px !important;
     padding: 12px !important;
     box-shadow: 0 6px 15px rgba(0,0,0,0.12);
@@ -59,7 +75,7 @@ h2, h3 {
 /* ---------- Buttons ---------- */
 .stButton > button {
     background: linear-gradient(135deg, #4f46e5, #06b6d4);
-    color: white;
+    color: white !important;
     border-radius: 12px;
     border: none;
     padding: 10px 22px;
@@ -85,7 +101,7 @@ section[data-testid="stSidebar"] {
 
 /* ---------- Plot Background ---------- */
 .stPyplot, .stPlotlyChart {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.92);
     padding: 15px;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -100,3 +116,10 @@ footer {
 #MainMenu {
     visibility: hidden;
 }
+/* ================= FIX METRIC TEXT COLOR ================= */
+
+/* Force black text for Accuracy, Precision, Recall, F1-score */
+div[data-testid="stMetric"] * {
+    color: #000000 !important;
+}
+
